@@ -160,7 +160,7 @@ tasks:
         docker run -v `pwd`/..:/home/build -w /home/build \
         -e CGO_ENABLED=1 \
         {{.CONTAINER}}:{{.CONTAINER_TAG}} \
-        --build-cmd "{{.BUILD_COMMAND}}" \
+        --build-cmd "git config --global --add safe.directory /home/build && {{.BUILD_COMMAND}}" \
         -p "{{.BUILD_PLATFORM}}"
 
         tar cz -C {{.PLATFORM_DIR}} {{.PROJECT_NAME}} -C ../.. LICENSE.txt -f {{.PACKAGE_NAME}}
@@ -198,7 +198,7 @@ tasks:
       #
       # Until there is a fix released we must use a recent gcc for Linux_ARMv6 build, so for this
       # build we select the debian10 based container.
-      CONTAINER_TAG: "{{.GO_VERSION}}-armel-debian10"
+      CONTAINER_TAG: "{{.GO_VERSION}}-armel-debian9"
       PACKAGE_PLATFORM: "Linux_ARMv6"
       PACKAGE_NAME: "{{.PROJECT_NAME}}_{{.VERSION}}_{{.PACKAGE_PLATFORM}}.tar.gz"
 
