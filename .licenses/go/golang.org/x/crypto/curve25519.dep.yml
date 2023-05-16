@@ -1,10 +1,10 @@
 ---
-name: golang.org/x/crypto/internal/poly1305
+name: golang.org/x/crypto/curve25519
 version: v0.0.0-20211215153901-e495a2d5b3d3
 type: go
-summary: Package poly1305 implements Poly1305 one-time message authentication code
-  as specified in https://cr.yp.to/mac/poly1305-20050329.pdf.
-homepage: https://pkg.go.dev/golang.org/x/crypto/internal/poly1305
+summary: Package curve25519 provides an implementation of the X25519 function, which
+  performs scalar multiplication on the elliptic curve known as Curve25519.
+homepage: https://pkg.go.dev/golang.org/x/crypto/curve25519
 license: bsd-3-clause
 licenses:
 - sources: crypto@v0.0.0-20211215153901-e495a2d5b3d3/LICENSE
