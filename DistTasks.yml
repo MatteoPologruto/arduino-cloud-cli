@@ -20,7 +20,7 @@ version: "3"
 
 vars:
   CONTAINER: "docker.elastic.co/beats-dev/golang-crossbuild"
-  GO_VERSION: "1.19.9"
+  GO_VERSION: "1.19.3"
   CHECKSUM_FILE: "{{.VERSION}}-checksums.txt"
 
 tasks:
@@ -197,8 +197,8 @@ tasks:
       #    https://groups.google.com/g/golang-codereviews/c/yzN80xxwu2E
       #
       # Until there is a fix released we must use a recent gcc for Linux_ARMv6 build, so for this
-      # build we select the debian10 based container.
-      CONTAINER_TAG: "{{.GO_VERSION}}-armel-debian10"
+      # build we select the debian9 based container.
+      CONTAINER_TAG: "{{.GO_VERSION}}-armel-debian9"
       PACKAGE_PLATFORM: "Linux_ARMv6"
       PACKAGE_NAME: "{{.PROJECT_NAME}}_{{.VERSION}}_{{.PACKAGE_PLATFORM}}.tar.gz"
 
